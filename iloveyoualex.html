@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Alex 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            color: #ff4d79;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+            overflow-x: hidden;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 40px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out;
+            display: none;
+            max-width: 600px;
+            width: 100%;
+            margin-top: 100px;
+        }
+        h1 {
+            font-size: 33px;
+            font-family: 'Dancing Script', cursive;
+            color: #ff4d79;
+        }
+        p {
+            font-size: 20px;
+            color: #444;
+        }
+        .letter {
+            font-size: 18px;
+            background: rgba(255, 240, 245, 0.8);
+            padding: 15px;
+            border-radius: 15px;
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 2s ease-in-out 2s forwards;
+        }
+        .buttons {
+            margin-top: 100px;
+            margin-bottom: 60px;
+            display: none;
+            opacity: 0;
+            position: relative;
+        }
+        button {
+            background-color: #ff4d79;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            margin: 10px;
+            font-size: 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background-color: #ff1a5c;
+            transform: scale(1.1) rotate(-1deg);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hey Darling! 💖</h1>
+        <p>I have something special to tell you... 💕</p>
+        <div class="letter">
+            <p>Dear Alex,</p>
+            <p>You are truly one of the most magical people I've ever known. 🌸</p>
+            <p>Your presence lights up my days and makes everything feel warm and safe. You're the kind of person that makes others believe in love, in beauty, in softness. 💫</p>
+            <p>I don’t need a special occasion to say this, but I love you so much. I'm endlessly grateful for you — for your smile, your voice, the way you care, and the way you make me feel so deeply seen. 💖</p>
+            <p>I hope you know just how adored you are, and how excited I am for everything we have ahead of us. 💕</p>
+            <h2>Will you be my girlfriend? 💞</h2>
+        </div>
+        <div class="buttons" id="yesButtons">
+            <button onclick="alert('YAY! I’m so happy now! 💕✨')">Yes</button>
+            <button id="noBtn">No</button>
+        </div>
+    </div>
+
+    <script>
+        window.onload = () => {
+            const container = document.querySelector('.container');
+            const buttons = document.getElementById('yesButtons');
+            const noBtn = document.getElementById('noBtn');
+            container.style.display = 'block';
+            setTimeout(() => {
+                buttons.style.display = 'flex';
+                buttons.style.opacity = 1;
+                buttons.style.flexDirection = 'column';
+                buttons.style.alignItems = 'center';
+            }, 2000);
+
+            noBtn.addEventListener('mouseover', () => {
+                const randomX = Math.floor(Math.random() * 300) - 150;
+                const randomY = Math.floor(Math.random() * 300) - 150;
+                noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+            });
+        }
+    </script>
+</body>
+</html>
